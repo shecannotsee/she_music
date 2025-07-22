@@ -35,13 +35,13 @@ def set_metadata(mp3_file: str, title: str, artist: str, album: str, year: str, 
         audio["title"] = title
         audio["artist"] = artist
         audio["album"] = album
-        audio["date"] = int(year)
+        audio["date"] = year
         audio.save(mp3_file)
         # ✅ 添加底层年份标签 TDRC（Doppler 需要这个）
         try:
             id3 = ID3(mp3_file)
             id3.delall("TDRC")  # 清除已有的年份字段，避免重复
-            id3.add(TDRC(encoding=3, text=str(year)))
+            id3.add(TDRC(encoding=3, text=year))
             id3.save(mp3_file, v2_version=3)  # ✅ 强制保存为 ID3v2.3，Doppler 更兼容
         except Exception as e:
             print(f"⚠️ 设置底层年份标签失败: {e}")
@@ -105,7 +105,7 @@ if __name__ == "__main__":
     title = sys.argv[2]
     artist = sys.argv[3]
     album = sys.argv[4]
-    year = int(sys.argv[5])
+    year = sys.argv[5]
     cover_path = sys.argv[6]
 
     set_metadata(mp3_file, title, artist, album, year, cover_path)
