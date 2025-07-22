@@ -21,7 +21,7 @@ def download_song(keyword: str, out_dir: str, output_name: str) -> bool:
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("用法: python3 download_song.py <搜索关键词> <输出目录> <输出名称>")
-        print("示例: python3 download_song.py '周杰伦 七里香' downloads 七里香.mp3")
+        print("示例: python3 download_song.py '周杰伦 七里香' download 七里香.mp3")
         sys.exit(1)
 
     keyword = sys.argv[1]
