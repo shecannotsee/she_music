@@ -1,4 +1,5 @@
 import os
+import sys
 from mutagen.easyid3 import EasyID3
 from mutagen.id3 import ID3, APIC, error, TDRC
 from mutagen.mp3 import MP3
@@ -98,7 +99,7 @@ def set_metadata(mp3_file: str, title: str, artist: str, album: str, year: str, 
 if __name__ == "__main__":
     if len(sys.argv) < 6:
         print("用法: python3 set_metadata.py <mp3路径文件> <歌名> <歌手> <专辑> <年份> <专辑封面路径>")
-        print("示例: python3 set_metadata.py ./download/七里香.mp3 七里香 周杰伦 七里香 2019 ./album_cover/周杰伦/七里香.jpg")
+        print("示例: python3 set_metadata.py ./download/七里香.mp3 七里香 周杰伦 七里香 2004 ./album_cover/周杰伦/七里香.jpg")
         sys.exit(1)
 
     mp3_file = sys.argv[1]
