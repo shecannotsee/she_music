@@ -1,5 +1,13 @@
 # she_music
 
+## 项目依赖
+
+1. python 通过 `pip install PyYAML mutagen Pillow yt-dlp` 安装依赖包, 并且通过下面方式添加路径:
+    ```bash
+    echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+2. 需要安装 ffmpeg
 
 ## 下载方式1
 通过 ./batch_download.sh 下载 playlist 中的所有音乐
